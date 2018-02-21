@@ -1,0 +1,30 @@
+body {
+  background-color: #2f3640;
+}
+
+.linkDiv {
+  float: left;
+  padding: 5px;
+}
+
+.logoImage {
+  filter: brightness(0) invert(1);
+}
+
+#nameLabel {
+  color: white;
+  font-family: Helvetica;
+  font-style: normal;
+  font-size: 50px;
+}
+
+#basicInfoDiv {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 335px;
+  height: 200px;
+}
