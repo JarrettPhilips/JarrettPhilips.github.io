@@ -29,6 +29,9 @@
   opacity: 1.0;
   font: Helvetica;
   font-size: 75px;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
 }
 
 #contact-row {
