@@ -1,98 +1,401 @@
 /*
-  Variables
+
 */
 :root {
-    --primary-color: #f5f6fa;
-    --secondary-color: #2f3640;
-}
+    --main-bg-color: #0D0D0D;
+    --light-text-color: #ffffff;
+    --dark-text-color: #0D0D0D;
 
+    --title-font: 'Quicksand', sans-serif;
+
+    --primary-color: #0D0D0D;
+    --secondary-color: #2f3640;
+    --text-color: #ffffff;
+}
 body {
-    background-color: black;
+    background-color: var(--main-bg-color);
     margin: 0px;
 
     max-height: 100%;
 
-    font-family: 'Red Hat Display', sans-serif;
+    overflow-x: hidden;
 }
 
-.background_wrapper {
-    grid-template-rows: auto;
-}
-
-.background_div {
-    background: url(images/background_image/waterfall-3.jpg) no-repeat;
-    background-size: contain;
-
-    width: 100%;
-    height: 8000px;
-}
-
+/*
+    ======
+    LANDING
+    ======
+*/
 .title_spacer {
-  height: 300px;
-  width: auto;
+    height: 300px;
+    width: auto;
+}
+.horizontal_spacer {
+    width: 100%;
+    //background-color: lime;
+}
+.vertical_spacer {
+    height: 37%;
 }
 
-.wrapper {
-    //background-color: blue;
-    max-width: 50%;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-}
+.landing_page {
+    //top:-100;
+    background: url(images/landing_page/berthoud.jpeg) no-repeat center top;
+    background-size: cover;
 
+    width: 100vw;
+    height: 100vh;
+    //overflow: hidden;
+    z-index: 950;
+}
+#landing_page_filler {
+    display: none;
+    height: 1000px;
+}
+.sticky {
+    position: fixed;
+    top: -900px;
+    width: 100%;
+}
+.sticky_filler {
+    display: block;
+}
+.hacky_bg {
+    background: url(images/landing_page/berthoud.jpeg) no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    width: 100vw;
+}
+.title_bar {
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    max-width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    //background-color: red;
+}
 .name {
-    font-size: 68px;
-    font: Helvetica;
+    //min-width: 400px;
+    font-size: 24px;
+    font-family: var(--title-font);
     letter-spacing: 0.35em;
 
-    padding-top: 20px;
-    padding-right: 10px;
-    padding-left: 10px;
+    padding-left: 2vw;
+    display: flex;
 
-    color: white;
-    grid-column: span 4;
-    text-align: center;
-    //filter: invert(100%);
+    align-items: center;
+    color: var(--dark-text-color);
+    //background-color: yellow;
 }
-
+.icon_container {
+    padding-right: 2vw;
+    display: flex;
+    justify-content: space-around;
+    min-width: 350px;
+}
 .iconlink {
-    min-height: 64px;
-    min-width: 64px;
     margin: auto;
-    //filter: invert(100%);
-    opacity: 0.75;
+    filter: invert(100%);
+    opacity: 0.50;
+    //padding-right: 40px;
+    //background-color: blue;
 }
-
+.logoImage {
+    min-height: 16px;
+    min-width: 16px;
+    max-height: 32px;
+    max-width: 32px;
+}
 .iconlink:hover {
-    opacity: 1.0;
+    opacity: 0.80;
+}
+.about_me {
+    padding-left: 125px;
+    padding-top: 50px;
+    max-width: 300px;
+
+    color: var(--dark-text-color);
+    font-family: var(--title-font);
+    visibility: hidden;
+}
+.name:hover {
+    cursor: pointer;
+}
+.down_arrow_div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+#down_arrow {
+    padding-top: 55px;
+    min-width: 64px;
+    filter: invert(100%);
 }
 
-.portfolio {
-  background-color: blue;
-  height: 1000px;
-  width: auto;
+/*
+    =========
+    PORTFOLIO
+    =========
+*/
+.portfolio_page {
+    z-index: 0;
+    //background-color: red;
+    //position: fixed;
+    //top: 1000;
+    //height: 1000px;
+    width: 100%;
 }
+.container {
+    padding: 60px;
+	  display: grid;
+	  //grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: 1fr 1fr;
+    //grid-auto-rows: 350px;
+    grid-auto-rows: 20vw;
+    grid-gap: 5px;
+    grid-auto-flow: dense;
+    //background-size: cover;
+}
+.container img {
+  	width: 100%;
+  	height: 100%;
+    //background-size: contain;
+    //background-image: no-repeat center;
+}
+.img_wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url(images/landing_page/berthoud.jpeg) no-repeat center;
+    background-size: cover;
+}
+.img_overlay_wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    color: var(--light-text-color);
+    visibility: hidden;
+    background: rgba(13, 13, 13, .5);
+    text-align: center;
+    font-family: var(--title-font);
 
-.footer {
+    /* transition effect. not necessary */
+    //transition: opacity .2s, visibility .2s;
+}
+.img_overlay_line {
+    width: 20%;
+    border: none;
+    height: 2px;
+    background: var(--light-text-color);
+}
+.img_overlay_title {
+
+}
+.img_overlay_desciption {
+
+}
+.img_wrap:hover .img_overlay_wrapper {
+    visibility: visible;
+    opacity: 1;
+}
+.img_wrap:hover {
+    cursor: pointer;
+}
+.txt_panel {
+    display: none;
+}
+.txt_wrap {
+    color: var(--light-text-color);
+    font-family: var(--title-font);
+
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 7fr 1fr;
+    grid-gap: 5px;
+    grid-auto-flow: dense;
+}
+.txt_title {
+    font-size: 20px;
+    min-width: 100%;
+    grid-row: span 2;
     background-color: red;
 }
+.txt_year {
+    font-size: 16px;
+    opacity: 0.6;
+    text-align: right;
+}
+.txt_link_div {
+    font-size: 16px;
+    width: 150px;
+    opacity: 1.0;
+    text-align: right;
+}
+.txt_link {
+    color: var(--light-text-color);
+    opacity: 0.6;
+}
+.txt_link:hover {
+    opacity: 1.0;
+}
+.txt_line {
+    width: 90%;
+    border: none;
+    height: 1px;
+    background: var(--light-text-color);
+    grid-column: span 3;
+}
+.txt_paragraph {
+    font-size: 14px;
+    grid-column: span 3;
+}
+.txt_filler {
+    height: 100%;
+}
 
+.horizontal{
+    grid-column: span 2;
+}
+.vertical {
+    grid-row: span 2;
+}
+.big{
+    grid-column: span 2;
+    grid-row: span 2;
+}
+.large {
+    grid-column: span 5;
+}
+.small {
+    grid-column: span 4;
+}
+#project_1 {
+    background: url(images/portfolio_page/marion.png) no-repeat center;
+    background-size: cover;
+}
+#project_2 {
+    background: url(images/portfolio_page/ips.jpg) no-repeat center;
+    background-size: cover;
+}
+#project_3 {
+    background: url(images/portfolio_page/drone_cv.jpg) no-repeat center;
+    background-size: cover;
+}
+#project_4 {
+    background: url(images/portfolio_page/chronicle.png) no-repeat center;
+    background-size: cover;
+}
+#project_5 {
+    background: url(images/portfolio_page/bike.png) no-repeat center;
+    background-size: cover;
+}
+#project_6 {
+    background: url(images/portfolio_page/edge_detection.png) no-repeat center;
+    background-size: cover;
+}
+#project_7 {
+    background: url(images/portfolio_page/graphics.png) no-repeat center;
+    background-size: cover;
+}
+#project_8 {
+    background: url(images/portfolio_page/weather_demo.png) no-repeat center;
+    background-size: cover;
+}
+
+/*
+    ======
+    FOOTER
+    ======
+*/
+.footer {
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 30px;
+    color: var(--light-text-color);
+    font-family: var(--title-font);
+    font-size: 14px;
+
+    display: flex;
+    justify-content: space-between;
+}
+.footer_link {
+    color: var(--light-text-color);
+}
+
+#email_tag {
+    //min-width: 400px;
+    min-width: 30vw;
+}
+#source_tag {
+    //grid-column: span 3;
+    color: var(--light-text-color);
+    padding-bottom: 60px;
+}
+
+/*
+    ======
+    MOBILE
+    ======
+*/
+@media screen and (max-width: 1100px){
+    .name {
+        //grid-column: span: 6;
+    }
+    .title_bar {
+        //background-color: blue;
+    }
+    .horizontal_spacer {
+        display: none;
+    }
+}
+@media screen and (max-width: 900px){
+    .landing_page {
+        height: 30vh;
+        //overflow: hidden;
+        z-index: 950;
+    }
+
+    .container {
+        grid-auto-rows: 40vw;
+    }
+    .img_wrap {
+        grid-column: span 2;
+    }
+    .txt_panel {
+        grid-column: span 2;
+    }
+}
 @media screen and (max-width: 730px){
+    .title_bar {
+        //background-color: lime;
+        justify-content: center;
+    }
+
+    .icon_container {
+        padding-top: 10px;
+    }
+
     .wrapper {
 
     }
 
     .title_spacer {
-      height: 20px;
+        //height: 20px;
     }
 
     .name {
-      font-size: 36px;
-      padding-bottom: 15px;
+
     }
 
     .iconlink {
-        grid-column: span 4;
-        padding-bottom: 30px;
+
     }
 }

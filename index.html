@@ -5,49 +5,333 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
 <link href="https://fonts.googleapis.com/css?family=Red+Hat+Display&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
 <title>Jarrett Philips</title>
 <link rel="icon" href="images/icon.jpg">
 </head>
 <body>
-<div class=background_wrapper>
-<div class=background_div>
-    <div class=title_spacer></div>
-    <div class=wrapper>
-        <h1 class=name>Jarrett Philips</h1>
+<div>
 
-        <a class=iconlink href="https://github.com/JarrettPhilips/">
-            <img class="logoImage" src="images/info/githubLogo.png" alt="Github" width="64" height="64" title="Github">
+<!--
+    =======
+    LANDING
+    =======
+-->
+<div class="landing_page" id="landing_page">
+    <!--
+        Title Bar
+    -->
+    <div class="title_bar" id="title_bar">
+        <div onclick="toggle_txt_visibility('txt_0')" class="name">Jarrett Philips</div>
+        <!--<div class="horizontal_spacer"></div>-->
+        <div class="icon_container">
+        <a class="iconlink" href="https://github.com/JarrettPhilips/">
+            <img class="logoImage" src="images/icons/githubLogo.png" alt="Github (@jarrettphilips)" width="64" height="64" title="Github (@jarrettphilips)">
         </a>
-
-        <a class=iconlink href="https://www.instagram.com/jarrettphilips/">
-            <img class="logoImage" src="images/info/instagramLogo.png" alt="Instagram" width="64" height="64" title="Instagram">
+        <a class="iconlink" href="https://www.instagram.com/jarrettphilips/">
+            <img class="logoImage" src="images/icons/instagramLogo.png" alt="Instagram (@jarrettphilips)" width="64" height="64" title="Instagram (@jarrettphilips)">
         </a>
-
-        <a class=iconlink href="mailto:jarrettphilips@gmail.com" target="_top">
-            <img class="logoImage" src="images/info/gmailLogo.png" alt="email" width="64" height="64" title="Email">
+        <a class="iconlink" href="mailto:jarrettphilips@gmail.com" target="_top">
+            <img class="logoImage" src="images/icons/gmailLogo.png" alt="Email (jarrettphilips@gmail.com)" width="64" height="64" title="Email (jarrettphilips@gmail.com)">
         </a>
-
-        <a class=iconlink href="https://www.linkedin.com/in/jarrett-philips-883a9b159/?trk=onboarding-landing&dl=no">
-            <img class="logoImage" src="images/info/linkedinLogo.png" alt="linkedIn" width="64" height="64" title="LinkedIn">
+        <a class="iconlink" href="https://www.linkedin.com/in/jarrett-philips-883a9b159/?trk=onboarding-landing&dl=no">
+            <img class="logoImage" src="images/icons/linkedinLogo.png" alt="linkedIn" width="64" height="64" title="LinkedIn">
         </a>
-
+      </div>
+    </div>
+    <div class="vertical_spacer"></div>
+    <div class="about_me" id="txt_0">
+        An avid skiier, climber, surfer, and adventurer, I am always looking forward to the next challenge. I have a great passion for engineering and the problems it presents. Let's get to work.
+    </div>
+    <div class="vertical_spacer"></div>
+    <div class="down_arrow_div">
+        <div></div>
+        <a class="iconlink" href="#portfolio_page" target="_top">
+            <img class="logoImage" id="down_arrow" src="images/icons/downArrow.png" alt="See More" width="64" height="64" title="See More">
+        </a>
+        <div></div>
     </div>
 </div>
 
-<div class=portfolio>
-  Portfolio
+<!--
+    =========
+    PORTFOLIO
+    =========
+-->
+<div class="portfolio_page" id="portfolio_page">
+  <div class="container">
+        <!--
+            Project 1 - Marion
+        -->
+        <div onclick="toggle_txt_display('txt_1')" class="img_wrap" id="project_1">
+            <div class="img_overlay_wrapper">
+                <div class="vertical_spacer"></div>
+                <div class="img_overlay_title">Solar Array Offload System</div>
+                <hr class="img_overlay_line">
+                <div class="img_overlay_desciption">Mechanical Design, Computer Vision, ROS, Modeling, Networking | Python, C++</div>
+            </div>
+        </div>
+        <div class="txt_panel" id="txt_1">
+          <div class="txt_wrap">
+              <div class="txt_title"><b>Solar Array Offload System</b></div>
+              <div></div>
+              <div class="txt_year">2020</div>
+              <div></div>
+              <div class="txt_link_div"><a class="txt_link" href="https://github.com/JarrettPhilips/independent_proximity_sensor">Github</a>    <a class="txt_link" href="https://www.youtube.com/watch?v=BrbroOSd3m8">YouTube</a></div>
+              <hr class="txt_line">
+              <div class="txt_paragraph">
+                In order to ensure reliability in orbit, solar arrays must be precisely testing is conducted on the ground. This requires the offload of gravitational forces while minimizing any forces imposed by the testing fixture itself.
+
+                This project is a solution provides an active, scalable, and reconfigurable apparatus to support ground testing for a wide range of solar array sizes and variable deployment architectures.
+
+                The prototype implements a computer vision control system to autonomously track the path of each individual solar panel in the array. The active, two-axis gantry system positions itself over the attachment point suspending each solar panel, minimizing lateral forces during testing.
+
+                I was the systems engineer and lead software engineer, responsible for the planning and creation of a vast majority of the codebase, including the Robotic Operating System (ROS) framework, computer vision systems, reactive and predictive motion path generation, motor drivers, as well as system administration and networking.
+
+                While it's source code remains Ball's IP, you can read our white paper here!
+              </div>
+          </div>
+          <div class="txt_filler"></div>
+        </div>
+
+        <!--
+            Project 2 - IPS
+        -->
+        <div onc
+        <div onclick="toggle_txt_display('txt_2')" class="img_wrap" id="project_2">
+            <div class="img_overlay_wrapper">
+                <div class="vertical_spacer"></div>
+                <div class="img_overlay_title">Independent Proximity Sensor</div>
+                <hr class="img_overlay_line">
+                <div class="img_overlay_desciption">Electrical Design, Orientation, Networking | Arduino, Python</div>
+            </div>
+        </div>
+        <div class="txt_panel" id="txt_2">
+          <div class="txt_wrap">
+              <div class="txt_title"><b>Independent Proximity Sensor</b></div>
+              <div></div>
+              <div class="txt_year">2020</div>
+              <div></div>
+              <div class="txt_link_div"><a class="txt_link" href="https://github.com/JarrettPhilips/independent_proximity_sensor">Github</a>    <a class="txt_link" href="https://drive.google.com/file/d/1Ck5W8u5mIM23X1tua7kFaKKlf4Jps6Nt/view?usp=sharing">Report</a></div>
+              <hr class="txt_line">
+              <div class="txt_paragraph">
+                A custom built sensor used to generate point clouds of an environment. The handheld sensor has numerous infared distance sensors mounted. Tracking orientation enables the user to roll and move the sensor with their hand to scan the environment while maintaining accurate data measurements. This freedom on motion also allows a motor-less design, instead relying on intelligent software to track the infrared sensors orientation through an IMU chip and map the data accordingly. Once the sensor data is gathered, it is then be transmitted to an external computer which stores and renders the produced point cloud in read time. A more detailed report is also available for more detail on the mathematics.
+              </div>
+          </div>
+          <div class="txt_filler"></div>
+        </div>
+
+        <!--
+            Project 3 - Self Landing Drone
+        -->
+        <div onclick="toggle_txt_display('txt_3')" class="img_wrap" id="project_3">
+            <div class="img_overlay_wrapper">
+                <div class="vertical_spacer"></div>
+                <div class="img_overlay_title">Self Landing Drone</div>
+                <hr class="img_overlay_line">
+                <div class="img_overlay_desciption">Computer Vision, ROS | Python</div>
+            </div>
+        </div>
+        <div class="txt_panel" id="txt_3">
+          <div class="txt_wrap">
+              <div class="txt_title"><b>Self Landing Drone</b></div>
+              <div></div>
+              <div class="txt_year">2018</div>
+              <div></div>
+              <div class="txt_link_div"><a class="txt_link" href="https://github.com/JarrettPhilips/self_landing_drone">Github</a>    <a class="txt_link" href="https://www.youtube.com/watch?v=YfWKpK9FmZg">YouTube</a></div>
+              <hr class="txt_line">
+              <div class="txt_paragraph">
+                  A quadcopter program that can identify, locate, approach, and land on a moving platform of unknown trajectory. An arduino robot is used to move the landing pad in a randomized path. The system is coordinated through ROS running on a central computer. I was responsible for the computer vision code that locates the pad within the camera's feed and determines its relative position (in meters) to the drone.
+              </div>
+          </div>
+          <div class="txt_filler"></div>
+        </div>
+
+        <!--
+            Project 4 - Chronicle
+        -->
+        <div onclick="toggle_txt_display('txt_4')" class="img_wrap" id="project_4">
+            <div class="img_overlay_wrapper">
+                <div class="vertical_spacer"></div>
+                <div class="img_overlay_title">Journaling Application</div>
+                <hr class="img_overlay_line">
+                <div class="img_overlay_desciption">Desktop Application Development | Java</div>
+            </div>
+        </div>
+        <div class="txt_panel" id="txt_4">
+          <div class="txt_wrap">
+              <div class="txt_title"><b>Journaling Application</b></div>
+              <div></div>
+              <div class="txt_year">2018</div>
+              <div></div>
+              <div class="txt_link_div"><a class="txt_link" href="https://github.com/JarrettPhilips/independent_proximity_sensor">Github</a>    <a class="txt_link" href="https://www.youtube.com/watch?v=BrbroOSd3m8">YouTube</a></div>
+              <hr class="txt_line">
+              <div class="txt_paragraph">
+                  Built from scratch using Java Swing, this application allows reading and writing of journal entries stored in a universal format for easy manipulation in or out of the program. It supports photos and a ranking system which alters the color of the presented entry.
+              </div>
+          </div>
+          <div class="txt_filler"></div>
+        </div>
+
+        <!--
+            Project 5 - Component Design
+        -->
+        <div onclick="toggle_txt_display('txt_5')" class="img_wrap" id="project_5">
+            <div class="img_overlay_wrapper">
+                <div class="vertical_spacer"></div>
+                <div class="img_overlay_title">Drill Powered Bike</div>
+                <hr class="img_overlay_line">
+                <div class="img_overlay_desciption">Mechanical Design, CAD, Manufacturing</div>
+            </div>
+        </div>
+        <div class="txt_panel" id="txt_5">
+          <div class="txt_wrap">
+              <div class="txt_title"><b>Drill Powered Bike</b></div>
+              <div></div>
+              <div class="txt_year">2019</div>
+              <div></div>
+              <div class="txt_link_div"><!--<a class="txt_link" href="https://github.com/JarrettPhilips/independent_proximity_sensor">Github</a>-->    <!--<a class="txt_link" href="https://www.youtube.com/watch?v=BrbroOSd3m8">YouTube</a>--></div>
+              <hr class="txt_line">
+              <div class="txt_paragraph">
+                  A custom built bicycle driven by a drill made to complete a hill course. The process included design, CAD work, drawing creation, and manufacturing. I was responsible for systems integration and most manufacturing, including various machining tasks and welding.
+              </div>
+          </div>
+          <div class="txt_filler"></div>
+        </div>
+
+        <!--
+            Project 6 - Edge Detection
+        -->
+        <div onclick="toggle_txt_display('txt_6')" class="img_wrap" id="project_6">
+            <div class="img_overlay_wrapper">
+                <div class="vertical_spacer"></div>
+                <div class="img_overlay_title">Edge Detection</div>
+                <hr class="img_overlay_line">
+                <div class="img_overlay_desciption">File IO, Image Processing | C++</div>
+            </div>
+        </div>
+        <div class="txt_panel" id="txt_6">
+          <div class="txt_wrap">
+              <div class="txt_title"><b>Edge Detection</b></div>
+              <div></div>
+              <div class="txt_year">2015</div>
+              <div></div>
+              <div class="txt_link_div"><a class="txt_link" href="https://github.com/JarrettPhilips/edge_detection">Github</a>    <a class="txt_link" href="https://drive.google.com/file/d/15ym5iCb1jf6QW5X3XaaPPOwPUeZ-vpXg/view?usp=sharing">Documentation</a></div>
+              <hr class="txt_line">
+              <div class="txt_paragraph">
+                  Run from the command line, this C++ application takes a photo as an input, and generates a new image, marking all of the edges identified.
+              </div>
+          </div>
+          <div class="txt_filler"></div>
+        </div>
+
+        <!--
+            Project 7 - Graphics Engine
+        -->
+        <div onclick="toggle_txt_display('txt_7')" class="img_wrap" id="project_7">
+            <div class="img_overlay_wrapper">
+                <div class="vertical_spacer"></div>
+                <div class="img_overlay_title">Basic 3D Graphics Engine</div>
+                <hr class="img_overlay_line">
+                <div class="img_overlay_desciption">Graphics, Linear Algebra | Java</div>
+            </div>
+        </div>
+        <div class="txt_panel" id="txt_7">
+          <div class="txt_wrap">
+              <div class="txt_title"><b>Basic 3D Graphics Engine</b></div>
+              <div></div>
+              <div class="txt_year">2016</div>
+              <div></div>
+              <div class="txt_link_div"><a class="txt_link" href="https://github.com/JarrettPhilips/basic_3D_graphics_engine">Github</a>    <!--<a class="txt_link" href="https://www.youtube.com/watch?v=BrbroOSd3m8">YouTube</a>--></div>
+              <hr class="txt_line">
+              <div class="txt_paragraph">
+                  A basic rendering engine created from scratch in Java. It implements basic 3D objects from data files provided to it. It using only a library to draw polygons, so all translational, camera, and rendering calculations are custom made. It features clipping, movement, rotation, and camera movement. A small UI allows the user to switch between perspective and parallel rendering.
+              </div>
+          </div>
+          <div class="txt_filler"></div>
+        </div>
+
+        <!--
+            Project 8 - Snow Much Fun
+        -->
+        <div onclick="toggle_txt_display('txt_8')" class="img_wrap" id="project_8">
+            <div class="img_overlay_wrapper">
+                <div class="vertical_spacer"></div>
+                <div class="img_overlay_title">Weather Website</div>
+                <hr class="img_overlay_line">
+                <div class="img_overlay_desciption">Full Stack Development | HTML/CSS, mySQL, PHP, Javascript</div>
+            </div>
+        </div>
+        <div class="txt_panel" id="txt_8">
+          <div class="txt_wrap">
+              <div class="txt_title"><b>Weather Website</b></div>
+              <div></div>
+              <div class="txt_year">2017</div>
+              <div></div>
+              <div class="txt_link_div"><a class="txt_link" href="https://github.com/JarrettPhilips/snowmuchfun_website">Github</a>    <a class="txt_link" href="https://www.youtube.com/watch?v=82GGwOVgvDo">YouTube</a></div>
+              <hr class="txt_line">
+              <div class="txt_paragraph">
+                  Snow Much Fun is a social weather site, where data from all over Colorado is collected and displayed at popular outdoor locations. Users can view and comment on different locations to share more detailed updates on conditions, crowds, activities and more. I was responsible for the HTML/CSS front end, SQL database, and PHP user / password login system.
+              </div>
+          </div>
+          <div class="txt_filler"></div>
+        </div>
+    </div>
 </div>
 
-<div class=footer>
-    This website was written in HTML and CSS. Its source code can be viewed at: https://github.com/JarrettPhilips/JarrettPhilips.github.io
+<!--
+    ======
+    FOOTER
+    ======
+-->
+<div class="footer">
+    <div id="email_tag"><b>Email</b> jarrettphilips@gmail.com</div>
+    <div class="horizontal_spacer"></div>
+    <div><a class="footer_link" href="https://github.com/JarrettPhilips/JarrettPhilips.github.io">Resume</a></div>
+</div>
+<div class="footer">
+    <div id="source_tag">The source code for this website can be viewed <a class="footer_link" href="https://github.com/JarrettPhilips/JarrettPhilips.github.io">here</a>.</div>
+</div>
+</div>
 
-    The background images for the site were generated using a custom built edge detection program. The code is available here: https://github.com/JarrettPhilips/IntroductionToProgrammingFinalProject
-</div>
-</div>
+<!--
+    ==========
+    JAVASCRIPT
+    ==========
+-->
+<script>
+window.onscroll = function() {title_bar_sticky()};
+var background_hack = document.getElementById("title_bar");
+var sticky = 900;
+
+function title_bar_sticky() {
+  if (window.pageYOffset > sticky) {
+    background_hack.classList.add("hacky_bg");
+  } else {
+    background_hack.classList.remove("hacky_bg");
+  }
+}
+
+function toggle_txt_visibility(txt_id) {
+  var x = document.getElementById(txt_id);
+  if (x.style.visibility === "visible") {
+    x.style.visibility = "hidden";
+  } else {
+    x.style.visibility = "visible";
+  }
+}
+
+function toggle_txt_display(txt_id) {
+  var x = document.getElementById(txt_id);
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
 </body>
 </html>
