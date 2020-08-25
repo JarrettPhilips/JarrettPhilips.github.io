@@ -11,6 +11,8 @@
     --primary-color: #0D0D0D;
     --secondary-color: #2f3640;
     --text-color: #ffffff;
+
+    --grid-size: 24vw;
 }
 body {
     background-color: var(--main-bg-color);
@@ -127,11 +129,11 @@ body {
     cursor: pointer;
 }
 .down_arrow_div {
+    margin-top: 150px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
 #down_arrow {
-    padding-top: 55px;
     min-width: 64px;
     filter: invert(100%);
 }
@@ -150,13 +152,13 @@ body {
     width: 100%;
 }
 .container {
-    padding: 60px;
+    padding: 80px;
 	  display: grid;
 	  //grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-template-columns: 1fr 1fr;
     //grid-auto-rows: 350px;
-    grid-auto-rows: 20vw;
-    grid-gap: 5px;
+    grid-auto-rows: var(--grid-size);
+    grid-gap: 3px;
     grid-auto-flow: dense;
     //background-size: cover;
 }
@@ -172,6 +174,7 @@ body {
     height: 100%;
     background: url(images/landing_page/berthoud.jpeg) no-repeat center;
     background-size: cover;
+    //grid-column: span 2;
 }
 .img_overlay_wrapper {
     position: absolute;
@@ -211,6 +214,9 @@ body {
 }
 .txt_panel {
     display: none;
+    //overflow: scroll;
+    //overflow: hidden;
+    //grid-column: span 2;
 }
 .txt_wrap {
     color: var(--light-text-color);
@@ -219,14 +225,14 @@ body {
     padding: 20px;
     display: grid;
     grid-template-columns: 1fr 7fr 1fr;
-    grid-gap: 5px;
+    grid-gap: 0px;
     grid-auto-flow: dense;
 }
 .txt_title {
     font-size: 20px;
-    min-width: 100%;
+    min-width: 200px;
     grid-row: span 2;
-    background-color: red;
+    //background-color: red;
 }
 .txt_year {
     font-size: 16px;
@@ -256,6 +262,10 @@ body {
 .txt_paragraph {
     font-size: 14px;
     grid-column: span 3;
+    //height: 70%;
+    //height: 150px;
+    height: calc(var(--grid-size)/1.5);
+    overflow: scroll;
 }
 .txt_filler {
     height: 100%;
@@ -357,12 +367,6 @@ body {
     }
 }
 @media screen and (max-width: 900px){
-    .landing_page {
-        height: 30vh;
-        //overflow: hidden;
-        z-index: 950;
-    }
-
     .container {
         grid-auto-rows: 40vw;
     }
@@ -374,6 +378,11 @@ body {
     }
 }
 @media screen and (max-width: 730px){
+    .landing_page {
+        height: 60vh;
+        //overflow: hidden;
+        z-index: 950;
+    }
     .title_bar {
         //background-color: lime;
         justify-content: center;
@@ -383,19 +392,15 @@ body {
         padding-top: 10px;
     }
 
-    .wrapper {
-
-    }
-
     .title_spacer {
         //height: 20px;
     }
-
-    .name {
-
+    .container {
+        padding: 15px;
     }
 
-    .iconlink {
-
+    .img_overlay_wrapper {
+        visibility: visible;
+        opacity: 1;
     }
 }

@@ -43,9 +43,11 @@
       </div>
     </div>
     <div class="vertical_spacer"></div>
+    <!--
     <div class="about_me" id="txt_0">
-        An avid skiier, climber, surfer, and adventurer, I am always looking forward to the next challenge. I have a great passion for engineering and the problems it presents. Let's get to work.
+        Will implement this text in the future...
     </div>
+  -->
     <div class="vertical_spacer"></div>
     <div class="down_arrow_div">
         <div></div>
@@ -85,7 +87,7 @@
               <div class="txt_paragraph">
                 In order to ensure reliability in orbit, solar arrays must be precisely testing is conducted on the ground. This requires the offload of gravitational forces while minimizing any forces imposed by the testing fixture itself.
 
-                This project is a solution provides an active, scalable, and reconfigurable apparatus to support ground testing for a wide range of solar array sizes and variable deployment architectures.
+                As our senior project at CU Boulder's Design Center Colorado, we partnered with Ball Aerospace to develop a new test fixture. This project is a solution provides an active, scalable, and reconfigurable apparatus to support ground testing for a wide range of solar array sizes and variable deployment architectures.
 
                 The prototype implements a computer vision control system to autonomously track the path of each individual solar panel in the array. The active, two-axis gantry system positions itself over the attachment point suspending each solar panel, minimizing lateral forces during testing.
 
@@ -290,7 +292,7 @@
 <div class="footer">
     <div id="email_tag"><b>Email</b> jarrettphilips@gmail.com</div>
     <div class="horizontal_spacer"></div>
-    <div><a class="footer_link" href="https://github.com/JarrettPhilips/JarrettPhilips.github.io">Resume</a></div>
+    <div><a class="footer_link" href="https://drive.google.com/file/d/1RTlLT5QdUNBpmKyA2aP6JbS3I31DbUU7/view?usp=sharing">Resume</a></div>
 </div>
 <div class="footer">
     <div id="source_tag">The source code for this website can be viewed <a class="footer_link" href="https://github.com/JarrettPhilips/JarrettPhilips.github.io">here</a>.</div>
@@ -303,30 +305,38 @@
     ==========
 -->
 <script>
-window.onscroll = function() {title_bar_sticky()};
-var background_hack = document.getElementById("title_bar");
-var sticky = 900;
+window.onscroll = function(){
+  title_bar_sticky()
+};
 
-function title_bar_sticky() {
-  if (window.pageYOffset > sticky) {
+var background_hack = document.getElementById("title_bar");
+
+function title_bar_sticky(){
+  var sticky = window.innerHeight - (window.innerHeight * 0.1); //subtract title bar height (10vh)
+
+  if(window.innerWidth < 730){
+    var sticky = (window.innerHeight * (3/5)) - (window.innerHeight * 0.1);
+  }
+
+  if(window.pageYOffset > sticky){
     background_hack.classList.add("hacky_bg");
   } else {
     background_hack.classList.remove("hacky_bg");
   }
 }
 
-function toggle_txt_visibility(txt_id) {
+function toggle_txt_visibility(txt_id){
   var x = document.getElementById(txt_id);
-  if (x.style.visibility === "visible") {
+  if(x.style.visibility === "visible"){
     x.style.visibility = "hidden";
   } else {
     x.style.visibility = "visible";
   }
 }
 
-function toggle_txt_display(txt_id) {
+function toggle_txt_display(txt_id){
   var x = document.getElementById(txt_id);
-  if (x.style.display === "block") {
+  if(x.style.display === "block"){
     x.style.display = "none";
   } else {
     x.style.display = "block";
